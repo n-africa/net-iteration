@@ -26,7 +26,8 @@ namespace DotnetIteration
         //
         public static IEnumerable<string> Yelling(List<string> words)
         {
-            throw new System.NotImplementedException();
+            var uppercasedWords = words.Select(word => word.ToUpper());
+            return uppercasedWords;
         }
 
 
@@ -37,7 +38,8 @@ namespace DotnetIteration
         // 
         public static IEnumerable<int> Double(List<int> numbers)
         {
-            throw new System.NotImplementedException();
+            var doubledNumbers = numbers.Select(number => number * 2);
+            return doubledNumbers;
         }
 
 
@@ -49,7 +51,8 @@ namespace DotnetIteration
         // 
         public static IEnumerable<string> StringyIndexes(List<string> data)
         {
-            throw new System.NotImplementedException();
+            var newListOfStringsAndIndexes = data.Select((stringy, index) => $"{stringy} is at index {index}");
+            return newListOfStringsAndIndexes;
         }
 
 
@@ -59,7 +62,8 @@ namespace DotnetIteration
         // 
         public static IEnumerable<int> OnlyTheEvenSurvive(List<int> data)
         {
-            throw new System.NotImplementedException();
+            var evensOnly = data.Where(number => number % 2 == 0);
+            return evensOnly;
         }
 
 
@@ -70,7 +74,9 @@ namespace DotnetIteration
         // 
         public static IEnumerable<int> OnlyTheEvenIndexedSurvive(List<int> data)
         {
-            throw new System.NotImplementedException();
+            var evensAtIndexes = data.Where((number, index) => index % 2 == 0);
+            return evensAtIndexes;
+
         }
 
 
@@ -89,7 +95,9 @@ namespace DotnetIteration
         // 
         public static IEnumerable<string> BestMovieOfTheYear(List<Movie> data, int year)
         {
-            throw new System.NotImplementedException();
+            var startMoviesFrom2017 = data.Where(movie => movie.Year == year && movie.Score > 90);
+            var goodMoviesFrom2017 = startMoviesFrom2017.Select(movie => movie.Name);
+            return goodMoviesFrom2017;
         }
 
 
@@ -99,18 +107,21 @@ namespace DotnetIteration
         // 
         public static bool EveryoneIsOdd(List<int> data)
         {
-            throw new System.NotImplementedException();
+            var oddsOnly = data.All(odds => odds % 2 != 0);
+            return oddsOnly;
         }
 
 
         // 
-        // 8) Complete the method FindTheNeedle that accepts an list of
+        // 8) Complete the method FindTheNeedle that accepts a list of
         //    strings and returns the one string that contains the word
         //    `needle`.
         // 
         public static string FindTheNeedle(List<string> data)
         {
-            throw new System.NotImplementedException();
+            var needleFound = data.FirstOrDefault(data => data.Contains("needle"));
+            return needleFound;
+
         }
 
 
@@ -121,7 +132,9 @@ namespace DotnetIteration
         // 
         public static int FindTheNeedleIndex(List<string> data)
         {
-            throw new System.NotImplementedException();
+            var needleFoundIndex = data.IndexOf(data => data.Contains("needle"));
+            return needleFoundIndex;
+
         }
 
 
