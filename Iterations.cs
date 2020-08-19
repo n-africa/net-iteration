@@ -132,7 +132,7 @@ namespace DotnetIteration
         // 
         public static int FindTheNeedleIndex(List<string> data)
         {
-            var needleFoundIndex = data.IndexOf(data => data.Contains("needle"));
+            var needleFoundIndex = data.FindIndex(data => data.Contains("needle"));
             return needleFoundIndex;
 
         }
@@ -145,7 +145,8 @@ namespace DotnetIteration
         // 
         public static bool SomeoneToLove(List<string> data)
         {
-            throw new System.NotImplementedException();
+            var fourCharactersLong = data.Any(data => data.Length == 4);
+            return fourCharactersLong;
         }
     }
 }
